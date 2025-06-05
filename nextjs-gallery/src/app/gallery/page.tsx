@@ -3,7 +3,13 @@ import Link from 'next/link';
 
 async function fetchPhotos(){
     const res = await fetch('http://jsonplaceholder.typicode.com/photos?_limit=20');
-    return res.json();
+    const photos = await res.json();
+
+    return photos.map((photo: any) => ({
+        ...photo,
+        thumbnailUrl: `https://placehold.co/300x300`,
+        url: `https://placehold.co/1000x1000`,
+    }))
 }
 
 export default async function GalleryPage() {
@@ -12,7 +18,7 @@ export default async function GalleryPage() {
   return (
     <div className="flex flex-col items-center p-10">
       <h1 className="text-3xl font-bold mb-6">Gallery</h1>
-      <p>Fetching photos...</p>
+      <p>Enjoy our private collection</p>
 
       <div className="p-10 grid grid-cols-3 gap-4">
         {photos.map((photo:any) => (
