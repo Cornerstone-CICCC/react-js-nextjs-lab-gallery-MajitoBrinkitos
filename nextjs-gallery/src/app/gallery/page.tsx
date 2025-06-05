@@ -20,7 +20,7 @@ export default async function GalleryPage() {
       <h1 className="text-3xl font-bold mb-6">Gallery</h1>
       <p>Enjoy our private collection</p>
 
-      <div className="p-10 grid grid-cols-3 gap-4">
+      <div className="p-10 grid grid-cols-5 gap-4">
         {photos.map((photo:any) => (
             <Link key={photo.id} href={`/gallery/${photo.id}`}>
                 <Image
