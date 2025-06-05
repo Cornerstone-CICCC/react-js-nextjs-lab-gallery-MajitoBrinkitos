@@ -15,7 +15,8 @@ async function getPhoto(id: string) {
 }
 
 export default async function PhotoDetail({ params }: { params: { id: string } }) {
-  const photo = await getPhoto(params.id);
+  const { id } = params;
+  const photo = await getPhoto(id);
 
   return (
     <div className="flex flex-col items-center p-10">

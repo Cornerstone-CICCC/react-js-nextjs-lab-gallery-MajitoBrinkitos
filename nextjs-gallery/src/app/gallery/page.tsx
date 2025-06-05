@@ -22,7 +22,7 @@ export default async function GalleryPage() {
 
       <div className="p-10 grid grid-cols-5 gap-4">
         {photos.map((photo:any) => (
-            <Link key={photo.id} href={`/gallery/${photo.id}`}>
+            <Link key={photo.id} href={`/gallery/${photo.id}?modal=true`}>
                 <Image
                     src={photo.thumbnailUrl}
                     alt={photo.title}

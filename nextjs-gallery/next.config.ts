@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "**",
         search: "",
-    }
+    },
     ],
   }
 };
